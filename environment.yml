@@ -1,0 +1,10 @@
+name: convnet
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=2.7
+  - pandas
+  - keras
+  - numpy
+  - scikit-image=0.14.2
