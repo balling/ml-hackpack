@@ -1,6 +1,7 @@
 import os
 import numpy as np
 import pandas as pd
+import tensorflow as tf
 from skimage.io import imread 
 from keras.models import Sequential
 from keras.layers import Dense, Dropout, Activation, Flatten
@@ -58,6 +59,9 @@ model.add(Dense(1, activation='sigmoid'))
  
 model.compile(loss='binary_crossentropy', optimizer='adam', metrics=['accuracy'])
  
-model.fit(X_train, y_train, batch_size=4, nb_epoch=10, verbose=1)
+model.fit(X_train, y_train, batch_size=4, epochs=10, verbose=1)
+
+predictions = model.predict(X_train[:5])
+print(predictions)
  
 score = model.evaluate(X_test, y_test, verbose=0)
